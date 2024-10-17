@@ -98,7 +98,7 @@ class TicketManager {
 
         // Agrega el "usuario" creado al array de "participantes"
         this.#eventos[indiceDelEvento].participantes.push(idUsuario);
-    };
+   };
 
     // Método público que clona un "evento" y lo agrega al array de "eventos"
     ponerEventoEnGira = (idEvento, nuevaLocalidad, nuevaFecha) => {
