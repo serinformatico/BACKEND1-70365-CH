@@ -1,0 +1,16 @@
+{
+  "name": "mi_primer_proyecto",
+  "version": "1.0.0",
+  "main": "demo.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sergio Regalado Alessi",
+  "license": "MIT",
+  "description": "Mi primer Proyecto de de Node JS",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}

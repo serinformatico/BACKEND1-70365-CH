@@ -1,0 +1,15 @@
+{
+  "name": "mi_proyecto_calculadora",
+  "version": "1.0.0",
+  "main": "demo.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sergio Regalado Alessi",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}

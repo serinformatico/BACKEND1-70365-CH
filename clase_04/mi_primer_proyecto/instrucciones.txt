@@ -1,0 +1,6 @@
+INSTRUCCIONES PARA CREAR UN PROYECTO DE NodeJS:
+    1. Tener instalado NodeJS v18
+    2. Inicializar el proyecto con el comando: npm init -y
+    3. Abrir y completar el archivo package.json
+    4. Instalar la dependencia "moment" de forma local con el comando: npm install moment
+    5. Usar la dependencia instalada por medio de la importación del módulo
