@@ -1,0 +1,22 @@
+{
+  "name": "ejemplo3_mi_servidor_express_params",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings ./app.js",
+    "dev": "nodemon ./app.js",
+    "stop-linux": "killall -9 node",
+    "stop-windows": "taskkill /F /IM node.exe"
+  },
+  "keywords": [],
+  "author": "Sergio Regalado Alessi",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
