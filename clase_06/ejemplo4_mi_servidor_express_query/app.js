@@ -29,7 +29,7 @@ app.get("/", (request, response) => {
 
     const usersResponseJSON = JSON.stringify(usersResponse);
 
-    response.json(usersResponseJSON);
+    response.status(200).json(usersResponseJSON);
 });
 
 // Se levanta el servidor oyendo en el puerto definido
