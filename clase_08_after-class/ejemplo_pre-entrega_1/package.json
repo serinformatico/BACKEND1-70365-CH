@@ -1,0 +1,26 @@
+{
+  "name": "ejemplo_pre-entrega_1",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings ./src/app.js",
+    "dev": "nodemon ./src/app.js",
+    "stop-linux": "killall -9 node",
+    "stop-windows": "taskkill /F /IM node.exe",
+    "lint": "eslint ./src --fix"
+  },
+  "keywords": [],
+  "author": "Sergio Regalado Alessi",
+  "license": "MIT",
+  "description": "Ejemplo de Pre-entrega del Proyecto de Programación Backend I",
+  "dependencies": {
+    "express": "^4.21.1",
+    "moment": "^2.30.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.7"
+  }
+}
