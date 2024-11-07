@@ -1,0 +1,11 @@
+<h1>Datos Personales</h1>
+
+<ul>
+    <li>Nombre: {{user.firstName}}</li>
+    <li>Apellido: {{user.lastName}}</li>
+    <li>Edad: {{user.age}} {{#if esMayorDeEdad}}(es mayor de edad){{/if}}</li>
+    <li>Correo: {{user.email}}</li>
+    <li>País: {{user.country}}</li>
+</ul>
+
+<p>Hace clic <a href="/users">aquí</a> para volver a la lista de usuarios</p>

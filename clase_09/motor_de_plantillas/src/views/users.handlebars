@@ -1,0 +1,17 @@
+<h1>Lista de Usuarios</h1>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+    </tr>
+    {{#each users }}
+    <tr>
+        <td>{{this.firstName}}</td>
+        <td>{{this.lastName}}</td>
+        <td>{{this.email}}</td>
+    </tr>
+    {{/each}}
+</table>
+<p>Hace clic <a href="/users/register">aquí</a> para registrar un usuario</p>

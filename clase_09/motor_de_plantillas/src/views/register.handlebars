@@ -1,0 +1,34 @@
+<h1>Registrar Usuario</h1>
+
+<div>
+    <form action="/api/users" method="post">
+        <div>
+            <label for="firstName">Nombre</label>
+            <input type="text" name="firstName" id="firstName">
+        </div>
+        <div>
+            <label for="lastName">Apellido</label>
+            <input type="text" name="lastName" id="lastName">
+        </div>
+        <div>
+            <label for="age">Edad</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <div>
+            <label for="email">Correo</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="country">País</label>
+            <select name="country" id="country">
+                <option value="ARG">Argentina</option>
+                <option value="COL">Colombia</option>
+                <option value="URU">Uruguay</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Registrar">
+    </form>
+</div>
+
+<p>Hace clic <a href="/users">aquí</a> para volver a la lista de usuarios</p>
