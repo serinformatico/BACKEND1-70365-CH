@@ -1,0 +1,14 @@
+<h1>Envío de mensajes con Websocket</h1>
+
+<div>
+    <h3 id="my-socket-id"></h3>
+    <div>
+        <input type="text" name="text" id="text" placeholder="Ingresa un mensaje">
+    </div>
+    <p id="messages"></p>
+</div>
+
+
+{{!-- El script de socket.io debe estar antes que message.js --}}
+<script src="/socket.io/socket.io.js"></script>
+<script src="/api/public/js/message.js"></script>
