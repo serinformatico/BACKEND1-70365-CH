@@ -1,0 +1,18 @@
+<header>
+    <h1>WEBSOCKET</h1>
+    <h2>Chat Online</h2>
+</header>
+
+<main>
+    <section>
+        <input type="text" name="chat-text" id="chat-text" placeholder="Escribí tu mensaje">
+        <div>
+            <h3>Mensajes</h3>
+            <ul id="message-logs"></ul>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/api/public/js/chat.socket.js"></script>
