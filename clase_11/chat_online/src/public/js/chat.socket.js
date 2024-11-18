@@ -36,10 +36,10 @@ chatText.onkeyup = (event) => {
 };
 
 // Alerta que muestra cuando se ha conectado un nuevo usuario
-socket.on("message-logs", (data) => {
+socket.on("message-log", (data) => {
     if (!user) return;
 
-    messageLogs.innerText = "";
+    messageLog.innerText = "";
 
     data.messages.forEach((item) => {
         messageLog.innerHTML += `<li>${item.user} dice: <b>${item.message}</b></li>`;

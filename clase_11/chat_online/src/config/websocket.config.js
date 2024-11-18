@@ -14,7 +14,7 @@ export const config = (httpServer) => {
 
             messages.push({ user, message });
 
-            socketServer.emit("message-logs", { messages });
+            socketServer.emit("message-log", { messages });
         });
 
         socket.on("authenticated", (data) => {
