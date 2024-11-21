@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: brown;
+}
+
+.error404 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error404 img {
+    width: 400px;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 500px;
+}
+
+.ingredients__list {
+    height: 200px;
+    border: 1px solid black;
+}
+
+.ingredients__list__item {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0.25rem;
+}
+
+.ingredients__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 500px;
+}
+
+.ingredients__delete {
+    display: flex;
+    gap: 0.5rem;
+    width: 500px;
+}
+
+.ingredients__delete__input {
+    width: 100%;
+}
+
+.error-message {
+    color: brown;
+}

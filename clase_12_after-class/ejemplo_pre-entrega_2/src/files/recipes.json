@@ -1,0 +1,15 @@
+[
+	{
+		"id": 1,
+		"ingredients": [
+			{
+				"ingredient": 1,
+				"quantity": 1
+			},
+			{
+				"ingredient": 2,
+				"quantity": 3
+			}
+		]
+	}
+]

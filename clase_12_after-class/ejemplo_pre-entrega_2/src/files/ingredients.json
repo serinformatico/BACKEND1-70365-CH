@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"title": "Ingrediente de prueba A",
+		"status": false,
+		"stock": 250,
+		"thumbnail": "file_6499_03112024_230423.jpg"
+	},
+	{
+		"id": 2,
+		"title": "Ingrediente de prueba B",
+		"status": true,
+		"stock": 10,
+		"thumbnail": "file_9807_03112024_230420.jpg"
+	},
+	{
+		"id": 3,
+		"title": "Ingrediente de prueba C",
+		"status": true,
+		"stock": 15,
+		"thumbnail": "file_9564_03112024_230440.jpg"
+	}
+]

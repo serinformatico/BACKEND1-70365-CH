@@ -1,0 +1,41 @@
+<header>
+    <h1>INICIO - Ingredientes en Tiempo Real</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Ingredientes</h3>
+        {{!-- Uso de nomenclatura BEM (B de bloque, E de elemento y M de modificador)--}}
+        <div class="ingredients">
+            <div class="ingredients__list">
+                <ul class="ingredients__list__item" id="ingredients-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Formulario de Ingredientes</h3>
+        <form class="ingredients__form" id="ingredients-form">
+            <input type="text" name="title" placeholder="Nombre del ingrediente">
+            <div>¿Está activo?<input type="checkbox" name="status"></div>
+            <input type="number" name="stock" placeholder="Stock del ingrediente">
+
+            <input type="submit" value="Guardar" style="width: 100%">
+        </form>
+    </section>
+
+    <section>
+        <h3>Eliminación de Ingredientes</h3>
+        <div class="ingredients__delete">
+            <input type="number" class="ingredients__delete__input" id="input-ingredient-id"
+                placeholder="ID del Ingrediente">
+            <button id="btn-delete-ingredient">Eliminar</button>
+        </div>
+    </section>
+
+    <p class="error-message" id="error-message"></p>
+</main>
+
+{{!-- El script de socket.io debe estar antes que home.js --}}
+<script src="/socket.io/socket.io.js"></script>
+<script src="/api/public/js/ingredients.socket.js"></script>
