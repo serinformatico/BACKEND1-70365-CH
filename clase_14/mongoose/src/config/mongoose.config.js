@@ -2,7 +2,7 @@ import { connect, Types } from "mongoose";
 
 // Conecta con la base de datos MongoDB
 export const connectDB = async () => {
-    const URL = "mongodb+srv://sergio:1234@cluster0.4i0l5oa.mongodb.net/prueba";
+    const URL = "mongodb+srv://tuUsuario:tuClave@cluster0.4i0l5oa.mongodb.net/prueba";
 
     try {
         await connect(URL);
