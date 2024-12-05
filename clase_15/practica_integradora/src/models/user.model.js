@@ -32,6 +32,6 @@ const userSchema = new Schema({
     versionKey: false, // Elimina el campo __v de versión
 });
 
-const User = model("users", userSchema);
+const UserModel = model("users", userSchema);
 
-export default User;
+export default UserModel;

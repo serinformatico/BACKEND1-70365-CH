@@ -1,0 +1,105 @@
+[
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1001"
+    },
+    "nickName": "LM",
+    "firstName": "Lorena",
+    "lastName": "Medina",
+    "age": 30,
+    "email": "lore@hotmail.com",
+    "favoriteMovies": [
+      {
+        "movie": "573a1391f29313caabcd7c9e"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1002"
+    },
+    "nickName": "Mary",
+    "firstName": "Maria",
+    "lastName": "Molinero",
+    "age": 17,
+    "email": "mary2024@gmail.com",
+    "favoriteMovies": []
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1003"
+    },
+    "nickName": "Martu",
+    "firstName": "Martina",
+    "lastName": "Molinero",
+    "age": 19,
+    "email": "martu@gmail.com",
+    "favoriteMovies": []
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1004"
+    },
+    "nickName": "Belu",
+    "firstName": "Belén",
+    "lastName": "Vargas",
+    "age": 35,
+    "email": "flor@gmail.com",
+    "favoriteMovies": [
+      {
+        "movie": "573a1391f29313caabcd967e"
+      },
+      {
+        "movie": "573a1390f29313caabcd56df"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1005"
+    },
+    "nickName": "Tincho",
+    "firstName": "Martin",
+    "lastName": "Torres",
+    "age": 36,
+    "email": "tin@gmail.com",
+    "favoriteMovies": []
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1006"
+    },
+    "nickName": "Tin",
+    "firstName": "Martin",
+    "lastName": "Gago",
+    "age": 29,
+    "email": "tin29@gmail.com",
+    "favoriteMovies": []
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1007"
+    },
+    "nickName": "JP",
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "age": 20,
+    "email": "juan@gmail.com",
+    "favoriteMovies": [
+      {
+        "movie": "573a1390f29313caabcd63d6"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "573a1390f29313caabcd1008"
+    },
+    "nickName": "Manu",
+    "firstName": "Manuel",
+    "lastName": "Pampa",
+    "age": 18,
+    "email": "manu18@gmail.com",
+    "favoriteMovies": []
+  }
+]
