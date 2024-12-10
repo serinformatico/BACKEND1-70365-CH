@@ -65,7 +65,7 @@ export default class RecipeManager {
     }
 
     // Agrega un ingrediente a una receta o incrementa la cantidad de un ingrediente existente
-    addOneIngredient = async (id, ingredientId) => {
+    async addOneIngredient(id, ingredientId) {
         try {
             const recipeFound = await this.#findOneById(id);
             const ingredientIndex = recipeFound.ingredients.findIndex((item) => item.ingredient === Number(ingredientId));

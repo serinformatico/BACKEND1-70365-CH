@@ -10,17 +10,17 @@ router.get("/", async (req, res) => {
         const recipes = await recipeManager.getAll(req.query);
         res.status(200).json({ status: "success", payload: recipes });
     } catch (error) {
-        res.status(error.code || 500).json({ status: "error", message: error.message });
+        res.status(error.code).json({ status: "error", message: error.message });
     }
 });
 
-// Ruta para obtener una receta en específico por su ID
+// Ruta para obtener una receta por su ID
 router.get("/:id", async (req, res) => {
     try {
         const recipe = await recipeManager.getOneById(req.params.id);
         res.status(200).json({ status: "success", payload: recipe });
     } catch (error) {
-        res.status(error.code || 500).json({ status: "error", message: error.message });
+        res.status(error.code).json({ status: "error", message: error.message });
     }
 });
 
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
         const recipe = await recipeManager.insertOne(req.body);
         res.status(201).json({ status: "success", payload: recipe });
     } catch (error) {
-        res.status(error.code || 500).json({ status: "error", message: error.message });
+        res.status(error.code).json({ status: "error", message: error.message });
     }
 });
 

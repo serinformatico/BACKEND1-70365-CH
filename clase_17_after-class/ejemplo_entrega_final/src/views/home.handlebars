@@ -1,0 +1,18 @@
+<header>
+    <h1>Inicio</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Ingredientes</h3>
+        {{!-- Uso de nomenclatura BEM (B de bloque, E de elemento y M de modificador)--}}
+        <div class="ingredients">
+            <div class="ingredients__list">
+                <ul class="ingredients__list__item" id="ingredients-list"></ul>
+            </div>
+            <button id="btn-refresh-ingredients-list">Recargar Lista</button>
+        </div>
+    </section>
+</main>
+
+<script src="/api/public/js/ingredients.js"></script>
