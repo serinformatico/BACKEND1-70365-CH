@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     color: brown;
 }
@@ -21,31 +25,57 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 500px;
+    width: 600px;
 }
 
-.ingredients__list {
-    height: 200px;
+.ingredients__box {
+    height: 255px;
+    width: 600px;
     border: 1px solid black;
 }
 
-.ingredients__list__item {
+.ingredients__box__list {
     list-style-position: inside;
     padding: 0;
     margin: 0.25rem;
+}
+
+.ingredients__box__list__item {
+    display: flex;
+    gap: 10px;
+    height: 25px;
+}
+
+.ingredients__box__list__item__text {
+    width: 480px;
+
+    /* Implementación de Ellipsis (...) */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ingredients__pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.ingredients__goback {
+    display: block;
+    padding: 10px 0;
 }
 
 .ingredients__form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 500px;
+    width: 600px;
 }
 
 .ingredients__delete {
     display: flex;
     gap: 0.5rem;
-    width: 500px;
+    width: 600px;
 }
 
 .ingredients__delete__input {

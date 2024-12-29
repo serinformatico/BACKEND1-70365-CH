@@ -11,7 +11,7 @@ socket.on("ingredients-list", (data) => {
     ingredientsList.innerText = "";
 
     ingredients.forEach((ingredient) => {
-        ingredientsList.innerHTML += `<li>Id: ${ingredient.id} - Nombre: ${ingredient.title}</li>`;
+        ingredientsList.innerHTML += `<li class='ingredients__box__list__item'>Id: ${ingredient.id} - Nombre: ${ingredient.title}</li>`;
     });
 });
 

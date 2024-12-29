@@ -1,0 +1,26 @@
+<header>
+    <h1>RECETA ID: {{payload._id}}</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Ingredientes</h3>
+        <div class="ingredients">
+            <div>
+                <ul class="ingredients__box__list">
+                    {{#each payload.ingredients}}
+                    <li class="ingredients__box__list__item">
+                        <div class="ingredients__box__list__item__text">
+                            Id: {{this.ingredient._id}} - Nombre: {{this.ingredient.title}}
+                        </div>
+                        <div>Cantidad:{{this.quantity}}</div>
+                        <div><button onclick="removeIngredient('{{this.ingredient._id}}')">Quitar</button></div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <a href="/ingredients" class="ingredients__goback"><button title="Volver al inicio">↶</button></a>
+    </section>
+</main>

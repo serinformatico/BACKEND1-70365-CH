@@ -43,7 +43,8 @@ export default class RecipeManager {
     // Obtiene una receta específico por su ID
     async getOneById(id) {
         try {
-            return await this.#findOneById(id);
+            const recipe = await this.#findOneById(id);
+            return recipe.toObject(); // Convierte de tipo "Documento de Mongoose" a "Objecto JS Plano"
         } catch (error) {
             throw ErrorManager.handleError(error);
         }
@@ -71,6 +72,53 @@ export default class RecipeManager {
                 recipe.ingredients.push({ ingredient: ingredientId, quantity: 1 });
             }
 
+            await recipe.save();
+
+            return recipe;
+        } catch (error) {
+            throw new ErrorManager(error.message, error.code);
+        }
+    }
+
+    // Actualizar la cantidad de un ingrediente en específico
+    async updateQuantityOfIngredient(id, ingredientId, quantity) {
+        try {
+            const recipe = await this.#findOneById(id);
+            const ingredientIndex = recipe.ingredients.findIndex((item) => item.ingredient._id.toString() === ingredientId);
+
+            if (ingredientIndex >= 0) {
+                recipe.ingredients[ingredientIndex].quantity = Number(quantity);
+                await recipe.save();
+            }
+
+            return recipe;
+        } catch (error) {
+            throw new ErrorManager(error.message, error.code);
+        }
+    }
+
+    // Quitar un ingrediente en específico
+    async removeOneIngredient(id, ingredientId) {
+        try {
+            const recipe = await this.#findOneById(id);
+            const ingredientIndex = recipe.ingredients.findIndex((item) => item.ingredient._id.toString() === ingredientId);
+
+            if (ingredientIndex >= 0) {
+                recipe.ingredients.splice(ingredientIndex, 1);
+                await recipe.save();
+            }
+
+            return recipe;
+        } catch (error) {
+            throw new ErrorManager(error.message, error.code);
+        }
+    }
+
+    // Quitar todos los ingredientes
+    async removeAllIngredients(id) {
+        try {
+            const recipe = await this.#findOneById(id);
+            recipe.ingredients = [];
             await recipe.save();
 
             return recipe;

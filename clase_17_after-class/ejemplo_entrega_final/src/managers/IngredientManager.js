@@ -54,7 +54,8 @@ export default class IngredientManager {
     // Obtiene un ingrediente específico por su ID
     async getOneById(id) {
         try {
-            return await this.#findOneById(id);
+            const ingredient = await this.#findOneById(id);
+            return ingredient.toObject(); // Convierte de tipo "Documento de Mongoose" a "Objecto JS Plano"
         } catch (error) {
             throw ErrorManager.handleError(error);
         }

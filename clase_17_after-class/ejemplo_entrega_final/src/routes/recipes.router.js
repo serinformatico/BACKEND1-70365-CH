@@ -34,11 +34,45 @@ router.post("/", async (req, res) => {
     }
 });
 
-// Ruta para incrementar en una unidad o agregar un ingrediente específico en una receta por su ID
+// Ruta para agregar un ingrediente específico en una receta por su ID
 router.post("/:cid/ingredients/:pid", async (req, res) => {
     try {
         const { cid, pid } = req.params;
         const recipe = await recipeManager.addOneIngredient(cid, pid);
+        res.status(201).json({ status: "success", payload: recipe });
+    } catch (error) {
+        res.status(error.code || 500).json({ status: "error", message: error.message });
+    }
+});
+
+// Ruta para actualizar la cantidad de un ingrediente específico de una receta por su ID
+router.put("/:cid/ingredients/:iid", async (req, res) => {
+    try {
+        const { cid, iid } = req.params;
+        const { quantity } = req.body;
+        const recipe = await recipeManager.updateQuantityOfIngredient(cid, iid, quantity);
+        res.status(200).json({ status: "success", payload: recipe });
+    } catch (error) {
+        res.status(error.code || 500).json({ status: "error", message: error.message });
+    }
+});
+
+// Ruta para quitar un ingrediente específico de una receta por su ID
+router.delete("/:cid/ingredients/:iid", async (req, res) => {
+    try {
+        const { cid, iid } = req.params;
+        const recipe = await recipeManager.removeOneIngredient(cid, iid);
+        res.status(200).json({ status: "success", payload: recipe });
+    } catch (error) {
+        res.status(error.code || 500).json({ status: "error", message: error.message });
+    }
+});
+
+// Ruta para quitar todos los ingredientes de una receta por su ID
+router.delete("/:cid/ingredients", async (req, res) => {
+    try {
+        const { cid } = req.params;
+        const recipe = await recipeManager.removeAllIngredients(cid);
         res.status(200).json({ status: "success", payload: recipe });
     } catch (error) {
         res.status(error.code || 500).json({ status: "error", message: error.message });

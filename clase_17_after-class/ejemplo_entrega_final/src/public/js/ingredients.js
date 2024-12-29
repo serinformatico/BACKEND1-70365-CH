@@ -1,22 +1,12 @@
-const ingredientsList = document.getElementById("ingredients-list");
-const btnRefreshIngredientsList = document.getElementById("btn-refresh-ingredients-list");
+/* eslint-disable no-unused-vars */
 
-const loadIngredientsList = async () => {
-    const response = await fetch("/api/ingredients", { method: "GET" });
-    const data = await response.json();
-    const ingredients = data.payload.docs ?? [];
+const inputRecipeId = document.getElementById("recipe-id");
+const recipeId = inputRecipeId.value;
 
-    ingredientsList.innerText = "";
-
-    ingredients.forEach((ingredient) => {
-        ingredientsList.innerHTML += `<li>Id: ${ingredient.id} - Nombre: ${ingredient.title}</li>`;
-    });
+const addIngredient = async (ingredientId) => {
+    await fetch(`/api/recipes/${recipeId}/ingredients/${ingredientId}`, { method: "POST" });
 };
 
-btnRefreshIngredientsList.addEventListener("click", () => {
-    loadIngredientsList();
-    console.log("¡Lista recargada!");
-});
-
-// Se ejecuta para cargar la lista de ingredientes al ingresar o refrescar
-loadIngredientsList();
+const removeIngredient = async (ingredientId) => {
+    await fetch(`/api/recipes/${recipeId}/ingredients/${ingredientId}`, { method: "DELETE" });
+};
