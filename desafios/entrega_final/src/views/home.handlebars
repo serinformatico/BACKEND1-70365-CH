@@ -1,0 +1,53 @@
+<header>
+    <h1>Inicio</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Carrito de Compras</h3>
+        <input type="text" id="cart-id" value="{{cart._id}}" readonly>
+        <a href="/carts/{{cart._id}}"><button title="Ver carrito...">👁</button></a>
+    </section>
+
+    <section class="products">
+        <h3>Productos</h3>
+        {{!-- Uso de nomenclatura BEM (B de bloque, E de elemento y M de modificador)--}}
+        <div class="products__box">
+            <ul class="products__box__list">
+                {{#each payload.docs}}
+                <li class="products__box__list__item">
+                    <div class="products__box__list__item__text">
+                        Id: {{this._id}} - Nombre: {{this.title}}
+                    </div>
+                    <div>
+                        <a href="/products/{{this.id}}"><button title="Ver más...">👁</button></a>
+                        <button onclick="addProduct('{{this.id}}')">Agregar</button>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="products__pagination">
+            <div>
+                <a href="/products?page={{payload.page}}&sort=asc"
+                    title="Ordenar ascendentemente"><button>⬇</button></a>
+                <a href="/products?page={{payload.page}}&sort=desc"
+                    title="Ordenar descendentemente"><button>⬆</button></a>
+                <a href="/products?page={{payload.page}}" title="Resetear ordenamiento"><button>⬌</button></a>
+            </div>
+
+            {{#if payload.hasPrevPage}}
+            <a href="/products?page={{payload.prevPage}}{{payload.sort}}"><button>Anterior</button></a>
+            {{/if}}
+
+            {{#if payload.hasNextPage}}
+            <a href="/products?page={{payload.nextPage}}{{payload.sort}}"><button>Siguiente</button></a>
+            {{/if}}
+
+            <span>Página {{payload.page}} de {{payload.totalPages}}</span>
+        </div>
+    </section>
+</main>
+
+<script src="/api/public/js/products.js"></script>

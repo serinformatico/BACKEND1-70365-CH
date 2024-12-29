@@ -1,0 +1,28 @@
+<header>
+    <h1>PRODUCTO</h1>
+</header>
+
+<main>
+    <section class="products">
+        <h3>Detalles</h3>
+        <ul>
+            <li>ID: <b>{{payload._id}}</b></li>
+            <li>Nombre: <b>{{payload.title}}</b></li>
+            <li>Descripción: <b>{{payload.description}}</b></li>
+            <li>Código: <b>{{payload.code}}</b></li>
+            <li>Precio: $<b>{{payload.price}}</b></li>
+            <li>Stock: <b>{{payload.stock}}</b></li>
+            <li>Categoría: <b>{{payload.category}}</b></li>
+            <li>Estado: <b>{{#if payload.status}}HABILITADO{{else}}INHABILITADO{{/if}}</b></li>
+            <li>Disponible: <b>{{#if payload.availability}}SI{{else}}NO{{/if}}</b></li>
+            <li>
+                <div>Imagen:</div>
+                <img src="/api/public/images/{{payload.thumbnail}}" alt="Imagen del producto" width="600px">
+            </li>
+            <li>Creado: <i>{{payload.createdAt}}hs</i></li>
+            <li>Actualizado: <i>{{payload.updatedAt}}hs</i></li>
+        </ul>
+
+        <a href="/products"><button title="Volver al inicio">↶</button></a>
+    </section>
+</main>

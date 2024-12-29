@@ -1,0 +1,35 @@
+[
+	{
+		"id": 1,
+		"title": "Producto de prueba A",
+		"description": "Descripción del producto A",
+		"code": "100999",
+		"price": 9500.55,
+		"status": true,
+		"stock": 50,
+		"category": "TEST 1",
+		"thumbnail": "file_3841_03112024_221240.jpg"
+	},
+	{
+		"id": 2,
+		"title": "Producto de prueba B",
+		"description": "Descripción del producto B",
+		"code": "500100",
+		"price": 9500.55,
+		"status": false,
+		"stock": 100,
+		"category": "TEST 2",
+		"thumbnail": "file_7532_03112024_221241.jpg"
+	},
+	{
+		"id": 3,
+		"title": "Producto de prueba C",
+		"description": "Descripción del producto C",
+		"code": "150950",
+		"price": 15000,
+		"status": true,
+		"stock": 200,
+		"category": "TEST 1",
+		"thumbnail": "file_8646_03112024_221726.jpg"
+	}
+]

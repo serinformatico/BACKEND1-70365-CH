@@ -1,0 +1,33 @@
+<header>
+    <h1>CARRITO DE COMPRAS</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Detalles</h3>
+        <ul>
+            <li>ID: <b id="cart-id">{{payload._id}}</b></li>
+        </ul>
+    </section>
+
+    <section class="products">
+        <h3>Productos</h3>
+        <div>
+            <ul class="products__box__list">
+                {{#each payload.products}}
+                <li class="products__box__list__item">
+                    <div class="products__box__list__item__text">
+                        Id: {{this.product._id}} - Nombre: {{this.product.title}}
+                    </div>
+                    <div>Cantidad:{{this.quantity}}</div>
+                    <div><button onclick="removeProduct('{{this.product._id}}')">Quitar</button></div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <a href="/products"><button title="Volver al inicio">↶</button></a>
+    </section>
+</main>
+
+<script src="/api/public/js/products.js"></script>

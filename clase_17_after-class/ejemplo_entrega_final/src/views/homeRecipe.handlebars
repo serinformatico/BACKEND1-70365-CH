@@ -1,11 +1,18 @@
 <header>
-    <h1>RECETA ID: {{payload._id}}</h1>
+    <h1>RECETA</h1>
 </header>
 
 <main>
     <section>
+        <h3>Detalles</h3>
+        <ul>
+            <li>ID: <b id="recipe-id">{{payload._id}}</b></li>
+        </ul>
+    </section>
+
+    <section class="ingredients">
         <h3>Ingredientes</h3>
-        <div class="ingredients">
+        <div>
             <div>
                 <ul class="ingredients__box__list">
                     {{#each payload.ingredients}}
@@ -21,6 +28,8 @@
             </div>
         </div>
 
-        <a href="/ingredients" class="ingredients__goback"><button title="Volver al inicio">↶</button></a>
+        <a href="/ingredients"><button title="Volver al inicio">↶</button></a>
     </section>
 </main>
+
+<script src="/api/public/js/ingredients.js"></script>

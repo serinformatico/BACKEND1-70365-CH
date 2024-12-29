@@ -9,45 +9,43 @@
         <a href="/recipes/{{recipe._id}}"><button title="Ver receta...">👁</button></a>
     </section>
 
-    <section>
+    <section class="ingredients">
         <h3>Ingredientes</h3>
         {{!-- Uso de nomenclatura BEM (B de bloque, E de elemento y M de modificador)--}}
-        <div class="ingredients">
-            <div class="ingredients__box">
-                <ul class="ingredients__box__list">
-                    {{#each payload.docs}}
-                    <li class="ingredients__box__list__item">
-                        <div class="ingredients__box__list__item__text">
-                            Id: {{this._id}} - Nombre: {{this.title}}
-                        </div>
-                        <div>
-                            <a href="/ingredients/{{this.id}}"><button title="Ver más...">👁</button></a>
-                            <button onclick="addIngredient('{{this.id}}')">Agregar</button>
-                        </div>
-                    </li>
-                    {{/each}}
-                </ul>
+        <div class="ingredients__box">
+            <ul class="ingredients__box__list">
+                {{#each payload.docs}}
+                <li class="ingredients__box__list__item">
+                    <div class="ingredients__box__list__item__text">
+                        Id: {{this._id}} - Nombre: {{this.title}}
+                    </div>
+                    <div>
+                        <a href="/ingredients/{{this.id}}"><button title="Ver más...">👁</button></a>
+                        <button onclick="addIngredient('{{this.id}}')">Agregar</button>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="ingredients__pagination">
+            <div>
+                <a href="/ingredients?page={{payload.page}}&sort=asc"
+                    title="Ordenar ascendentemente"><button>⬇</button></a>
+                <a href="/ingredients?page={{payload.page}}&sort=desc"
+                    title="Ordenar descendentemente"><button>⬆</button></a>
+                <a href="/ingredients?page={{payload.page}}" title="Resetear ordenamiento"><button>⬌</button></a>
             </div>
 
-            <div class="ingredients__pagination">
-                <div>
-                    <a href="/ingredients?page={{payload.page}}&sort=asc"
-                        title="Ordenar ascendetemente"><button>⬇</button></a>
-                    <a href="/ingredients?page={{payload.page}}&sort=desc"
-                        title="Ordenar descendetemente"><button>⬆</button></a>
-                    <a href="/ingredients?page={{payload.page}}" title="Resetear ordenamiento"><button>⬌</button></a>
-                </div>
+            {{#if payload.hasPrevPage}}
+            <a href="/ingredients?page={{payload.prevPage}}{{payload.sort}}"><button>Anterior</button></a>
+            {{/if}}
 
-                {{#if payload.hasPrevPage}}
-                <a href="/ingredients?page={{payload.prevPage}}{{payload.sort}}"><button>Anterior</button></a>
-                {{/if}}
+            {{#if payload.hasNextPage}}
+            <a href="/ingredients?page={{payload.nextPage}}{{payload.sort}}"><button>Siguiente</button></a>
+            {{/if}}
 
-                {{#if payload.hasNextPage}}
-                <a href="/ingredients?page={{payload.nextPage}}{{payload.sort}}"><button>Siguiente</button></a>
-                {{/if}}
-
-                <span>Página {{payload.page}} de {{payload.totalPages}}</span>
-            </div>
+            <span>Página {{payload.page}} de {{payload.totalPages}}</span>
         </div>
     </section>
 </main>

@@ -25,12 +25,13 @@ export default class IngredientManager {
         return ingredient;
     }
 
-    // Obtiene una lista de ingredientes
+    // Obtiene una lista de ingredientes con filtros opcionales
     async getAll(params) {
         try {
             const $and = [];
 
             if (params?.title) $and.push({ title: { $regex: params.title, $options: "i" } });
+            if (params?.status) $and.push({ status: convertToBoolean(params.status) });
             const filters = $and.length > 0 ? { $and } : {};
 
             const sort = {

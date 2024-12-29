@@ -1,0 +1,17 @@
+<header>
+    <h1>Inicio</h1>
+</header>
+
+<main>
+    <section class="products">
+        <h3>Productos</h3>
+        {{!-- Uso de nomenclatura BEM (B de bloque, E de elemento y M de modificador)--}}
+        <div class="products__box">
+            <ul class="products__box__list">
+                {{#each products}}
+                <li class="products__box__list__item">Id: {{this.id}} - Nombre: {{this.title}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</main>
