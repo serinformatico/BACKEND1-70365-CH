@@ -45,12 +45,12 @@ router.post("/:cid/products/:pid", async (req, res) => {
     }
 });
 
-// Ruta para actualizar la cantidad de un producto específico de un carrito por su ID
-router.put("/:cid/products/:iid", async (req, res) => {
+// Ruta para actualizar una cantidad dada de un producto específico de un carrito por su ID
+router.put("/:cid/products/:pid", async (req, res) => {
     try {
-        const { cid, iid } = req.params;
+        const { cid, pid } = req.params;
         const { quantity } = req.body;
-        const cart = await cartManager.updateQuantityOfProduct(cid, iid, quantity);
+        const cart = await cartManager.updateQuantityOfProduct(cid, pid, quantity);
         res.status(200).json({ status: "success", payload: cart });
     } catch (error) {
         res.status(error.code || 500).json({ status: "error", message: error.message });
@@ -58,10 +58,10 @@ router.put("/:cid/products/:iid", async (req, res) => {
 });
 
 // Ruta para quitar un producto específico de un carrito por su ID
-router.delete("/:cid/products/:iid", async (req, res) => {
+router.delete("/:cid/products/:pid", async (req, res) => {
     try {
-        const { cid, iid } = req.params;
-        const cart = await cartManager.removeOneProduct(cid, iid);
+        const { cid, pid } = req.params;
+        const cart = await cartManager.removeOneProduct(cid, pid);
         res.status(200).json({ status: "success", payload: cart });
     } catch (error) {
         res.status(error.code || 500).json({ status: "error", message: error.message });
